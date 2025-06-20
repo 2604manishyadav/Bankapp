@@ -11,7 +11,7 @@ RUN mvn clean install -DskipTests=true
 
 # --------------STAGE 2--------------
 
-FROM openjdk-17-alpine
+FROM openjdk:17-alpine
 
 COPY --from=builder /src/target/*.jar /src/target/bankapp.jar
 
