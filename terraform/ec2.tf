@@ -13,82 +13,70 @@ data "aws_ami" "os_image" {
 
 
 resource "aws_key_pair" "deployer" {
-  key_name   = "bankapp-key"
-  public_key = file("bankapp-key.pub")
+  key_name   = "bankapp-automate-key"
+  public_key = file("bankapp-automate-key.pub")
 }
 
 
 resource "aws_default_vpc" "default" {
-  
+
 }
 
 
 resource "aws_security_group" "allow_user_to_connect" {
+  name        = "allow TLS"
+  description = "Allow user to connect"
+  vpc_id      = aws_default_vpc.default.id
+  ingress {
+    description = "port 22 allow SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-	name        = "allow_TLS"
-	description = "Allow user to connect"
-	vpc_id      = aws_default_vpc.default.id
+  egress {
+    description = " allow all outgoing traffic "
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-	ingress {
-	
-		description = "allow SSH port 22"
-		from_port = 22
-		to_port = 22
-		protocol = "tcp"
-		cidr_blocks = ["0.0.0.0/0"]
-	}
+  ingress {
+    description = "port 80 allow HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-	ingress {
+  ingress {
+    description = "port 443 allow HTTPS"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-                description = "allow HTTP port 80"
-                from_port = 80
-                to_port = 80
-                protocol = "tcp"
-                cidr_blocks = ["0.0.0.0/0"]
-        }
-
-	ingress {
-
-                description = "allow HTTS port 443"
-                from_port = 443
-                to_port = 443
-                protocol = "tcp"
-                cidr_blocks = ["0.0.0.0/0"]
-        }
-
-
-	egress {
-
-                description = "allow outgoing traffic"
-                from_port = 0
-                to_port = 0
-                protocol = "-1"
-                cidr_blocks = ["0.0.0.0/0"]
-        }
-	
-	tags = {
-		Name = "bankapp-securitygroup"
-		}
-
+  tags = {
+    Name = "bankapp-security"
+  }
 }
 
+
 resource "aws_instance" "testinstance" {
-
-
-	instance_type = var.instance_type
-	ami = data.aws_ami.os_image.id
-	key_name = aws_key_pair.deployer.key_name
-	security_groups = [aws_security_group.allow_user_to_connect.name]
-	root_block_device {
-		volume_size = 30
-		volume_type = "gp3"
-	}
-	tags = {
-   		 Name        = "Bankapp_Instance"
-    		 
-  	}
-
-
-
+  ami             = data.aws_ami.os_image.id
+  instance_type   = var.instance_type
+  key_name        = aws_key_pair.deployer.key_name
+  security_groups = [aws_security_group.allow_user_to_connect.name]
+  
+  tags = {
+    Name = "Bankapp-Automation-Server"
+  }
+  root_block_device {
+    volume_size = 30
+    volume_type = "gp3"
+  }
 
 }

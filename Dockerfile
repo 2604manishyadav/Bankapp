@@ -1,4 +1,4 @@
-#-------------------STAGE 1-------------
+#-------------------STAGE 1--------------
 
 FROM maven:3.8.3-openjdk-17 as builder
 
@@ -11,7 +11,7 @@ RUN mvn clean install -DskipTests=true
 
 # --------------STAGE 2--------------
 
-FROM openjdk-17-alpine
+FROM openjdk:17-alpine
 
 COPY --from=builder /src/target/*.jar /src/target/bankapp.jar
 
