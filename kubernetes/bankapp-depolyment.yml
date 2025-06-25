@@ -5,7 +5,6 @@ metadata:
   namespace: bankapp-namespace
   labels:
     app: bankapp
-
 spec:
   replicas: 2
   selector:
@@ -13,38 +12,35 @@ spec:
       app: bankapp
   template:
     metadata:
-      name: bankapp-pod
-      namespace: bankapp-namespace
       labels:
         app: bankapp
-      initcontainers:
-      - name: wait-for-mysql
-        image: busybox:1.28
-        command: command: ['sh', '-c', 'until nc -z mysql-headless-service 3306; do echo waiting for mysql; sleep 3; done;']
+    spec:
+      initContainers:
+        - name: wait-for-mysql
+          image: busybox:1.28
+          command: ['sh', '-c', 'until nc -z mysql-headless-service 3306; do echo waiting for mysql; sleep 3; done;']
       containers:
-      - name: bankapp-container
-        image: 2604manishyadav/bankapp-eks:v1
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m" 
-        ports:
-        - containerPort: 8080
-        env:
-        - name: SPRING_DATASOURCE_URL
-          valueFrom:
-            configMapKeyRef:
-              name: bankapp-config
-              key: SPRING_DATASOURCE_URL
-        - name: SPRING_DATASOURCE_USERNAME
-          valueFrom:
-            configMapKeyRef:
-              name: bankapp-config
-              key: SPRING_DATASOURCE_USERNAME
-
-        - name: SPRING_DATASOURCE_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-secret
-        
-
+        - name: bankapp-container
+          image: 2604manishyadav/bankapp-eks:v1
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: bankapp-config
+                  key: SPRING_DATASOURCE_URL
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: bankapp-config
+                  key: SPRING_DATASOURCE_USERNAME
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: SPRING_DATASOURCE_PASSWORD
