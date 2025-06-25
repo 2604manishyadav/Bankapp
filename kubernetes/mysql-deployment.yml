@@ -12,19 +12,21 @@ spec:
       app: mysql
   template:
     metadata:
+      name: mysql-pod
+      namespace: bankapp-namespace
       labels:
         app: mysql
     spec:
       containers:
-      - name: mysql
-        image: mysql:8.0  # Use a specific, stable version for production
+      - name: mysql-container
+        image: mysql:8.0 
         ports:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-secret
+              name: bankapp-secret
               key: MYSQL_ROOT_PASSWORD
         - name: MYSQL_DATABASE
           valueFrom:
@@ -32,9 +34,9 @@ spec:
               name: bankapp-config
               key: MYSQL_DATABASE
         volumeMounts:
-        - name: mysql-pv-storage
+        - name: mysql-data
           mountPath: /var/lib/mysql
-          subPath: mysql-data  # Optional: Ensure a subdirectory is used for better volume organization
+          
       volumes:
       - name: mysql-pv-storage
         persistentVolumeClaim:
