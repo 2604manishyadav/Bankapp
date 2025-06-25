@@ -3,10 +3,12 @@ kind: PersistentVolumeClaim
 metadata:
   name: mysql-pvc
   namespace: bankapp-namespace
+  labels:
+    app: mysql
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
-  storageClassName: standard
+      storage: 5Gi
+  storageClassName: manual
