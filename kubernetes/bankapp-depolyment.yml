@@ -5,6 +5,7 @@ metadata:
   namespace: bankapp-namespace
   labels:
     app: bankapp-deploy
+
 spec:
   replicas: 2
   selector:
@@ -12,11 +13,13 @@ spec:
       app: bankapp-deploy
   template:
     metadata:
+      name: bankapp-pod
+      namespace: bankapp-namespace
       labels:
         app: bankapp-deploy
     spec:
       containers:
-      - name: bankapp
+      - name: bankapp-container
         image: 2604manishyadav/bankapp-eks:v1
         resources:
           limits:
