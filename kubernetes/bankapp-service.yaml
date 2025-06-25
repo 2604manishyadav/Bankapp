@@ -5,6 +5,7 @@ metadata:
   namespace: bankapp-namespace
   labels:
     app: bankapp
+
 spec:
   selector:
     app: bankapp-deploy
