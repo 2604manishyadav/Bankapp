@@ -12,8 +12,6 @@ spec:
       app: mysql
   template:
     metadata:
-      name: mysql-pod
-      namespace: bankapp-namespace
       labels:
         app: mysql
     spec:
@@ -34,10 +32,10 @@ spec:
               name: bankapp-config
               key: MYSQL_DATABASE
         volumeMounts:
-        - name: mysql-data
-          mountPath: /var/lib/mysql
+          - name: mysql-data
+            mountPath: /var/lib/mysql
           
       volumes:
-      - name: mysql-pv-storage
+      - name: mysql-data
         persistentVolumeClaim:
           claimName: mysql-pvc
