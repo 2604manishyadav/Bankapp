@@ -45,5 +45,5 @@ spec:
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mysql-secret
+                  name: bankapp-secret
                   key: SPRING_DATASOURCE_PASSWORD
