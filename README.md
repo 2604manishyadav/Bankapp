@@ -10,7 +10,7 @@
 
 ## Tech stack used in this project:
 
-Github (Code)  
+Github (Code) 
 Terraform (Infrastructure)
 Docker (Containerization)
 Jenkins (CI)
