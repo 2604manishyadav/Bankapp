@@ -4,11 +4,11 @@
 
 ## This is a multi-tier bank an application written in Java (Springboot).
 
-### Screenshots
+#### Screenshots
 
 ![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/86627cd7887c50fd3be7550a35dc65625a5bde15/springboot.PNG)
 
-## Tech stack used in this project:
+#### Tech stack used in this project:
 
 - Github (Code)  
 - Terraform (Infrastructure)  
@@ -23,29 +23,29 @@
 
 Create 1 Master machine on AWS (t2.medium)    and 29 GB of storage using Terraform
 
-## Installation of Terraform
+### Installation of Terraform
 
-### Install Terraform in your local machine using shell script
+#### Install Terraform in your local machine using shell script
  
 #### terraform_install.sh 
 
-## Verify Installation
+#### Verify Installation
 
     terraform --version
 
-## Install awscli using shell script
+### Install awscli using shell script
 
 #### awscli-install.sh
 
-## Prerequisite
+#### Prerequisite
 
 IAM User with access keys and secret access keys
 
-## Configure awscli
+#### Configure awscli
 
     aws configure
 
-## Create ec2 instance using terraform configuration file
+#### Create ec2 instance using terraform configuration file
 
     terraform init 
     terraform plan  
