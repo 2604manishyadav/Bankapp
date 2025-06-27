@@ -29,7 +29,7 @@ Install Terraform in your local machine using shell script
  
 #### terraform_install.sh 
 
-#### Verify Installation
+Verify Installation
 
     terraform --version
 
@@ -37,7 +37,7 @@ Install Terraform in your local machine using shell script
 
 #### awscli-install.sh
 
-#### Prerequisite for configure awscli
+Prerequisite for configure awscli
 
 IAM User with access keys and secret access keys
 
