@@ -25,7 +25,7 @@ Create 1 Master machine on AWS (t2.medium)    and 29 GB of storage using Terrafo
 
 ## Installation of Terraform
 
-Install Terraform in your local machine using shell script
+### Install Terraform in your local machine using shell script
  
 #### terraform_install.sh 
 
