@@ -8,7 +8,7 @@
 
 ![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/86627cd7887c50fd3be7550a35dc65625a5bde15/springboot.PNG)
 
-#### Tech stack used in this project:
+### Tech stack used in this project:
 
 - Github (Code)  
 - Terraform (Infrastructure)  
@@ -45,7 +45,7 @@ IAM User with access keys and secret access keys
 
     aws configure
 
-#### Create ec2 instance using terraform configuration file
+### Create ec2 instance using terraform configuration file
 
     terraform init 
     terraform plan  
