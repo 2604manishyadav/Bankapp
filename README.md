@@ -25,7 +25,7 @@
 
 ### Installation of Terraform
 
-#### Install Terraform in your local machine using shell script
+Install Terraform in your local machine using shell script
  
 #### terraform_install.sh 
 
