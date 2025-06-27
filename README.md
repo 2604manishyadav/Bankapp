@@ -39,7 +39,7 @@ Create 1 Master machine on AWS (t2.medium)    and 29 GB of storage using Terrafo
 
 ## Prerequisite
 
-### IAM User with access keys and secret access keys
+IAM User with access keys and secret access keys
 
 ## Configure awscli
 
