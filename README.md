@@ -21,7 +21,7 @@
 
 # STEPS TO Deploy
 
-### Create a ec2 machine on AWS (t2.medium) and 29 GB of storage using Terraform
+### Create a Master machine on AWS (t2.large) and 29 GB of storage using Terraform
 
 ### Installation of Terraform
 
