@@ -10,12 +10,12 @@
 
 ## Tech stack used in this project:
 
-Github (Code) 
-Terraform (Infrastructure)
-Docker (Containerization)
-Jenkins (CI)
-ArgoCD (CD)
-AWS EKS (Kubernetes)
+Github (Code)  
+Terraform (Infrastructure)  
+Docker (Containerization)  
+Jenkins (CI)  
+ArgoCD (CD)  
+AWS EKS (Kubernetes)  
 Helm (Monitoring using grafana and prometheus)
 
 
