@@ -37,7 +37,7 @@
 
 #### awscli-install.sh
 
-#### Prerequisite
+#### Prerequisite for configure awscli
 
 IAM User with access keys and secret access keys
 
