@@ -35,10 +35,11 @@ Create 1 Master machine on AWS (t2.medium)    and 29 GB of storage using Terrafo
 
 ## Install awscli using shell script
 
-## Prerequisite
-IAM User with access keys and secret access keys
-
 #### awscli-install.sh
+
+## Prerequisite
+
+### IAM User with access keys and secret access keys
 
 ## Configure awscli
 
