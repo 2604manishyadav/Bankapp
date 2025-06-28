@@ -176,6 +176,10 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 #### Change port type of deployment service from ClusterIP to Nodeport for accessing Bankapp application
      kubectl patch svc bankapp-service -n bankapp-namespace -p '{"spec": {"type": "NodePort"}}'
 
+#### Bankapp Deploy
+
+![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/e727b7a439b45d570d233342889acac4345f5d88/BankappDeploy.PNG)
+
 
 ## Monitor EKS cluster, kubernetes components and workloads using prometheus and grafana via HELM (On Master machine)
 
