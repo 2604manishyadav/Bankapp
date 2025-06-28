@@ -169,14 +169,14 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
     --dest-namespace bankapp-namespace \
     --sync-policy automated 
 
-#### Application Deploy in ArgoCD
+#### Application Deployed in ArgoCD
 
 ![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/c93d706b6c8702b1abc0c0ccc56c1cbbb7fe2466/ApplicationDeploy.PNG)    
 
 #### Change port type of deployment service from ClusterIP to Nodeport for accessing Bankapp application
      kubectl patch svc bankapp-service -n bankapp-namespace -p '{"spec": {"type": "NodePort"}}'
 
-#### Bankapp Deploy
+#### Bankapp Deployed in EKS Cluster
 
 ![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/e727b7a439b45d570d233342889acac4345f5d88/BankappDeploy.PNG)
 
