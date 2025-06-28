@@ -65,7 +65,7 @@ IAM User with access keys and secret access keys
 
     eksctl utils associate-iam-oidc-provider --cluster bankapp-cluster --approve
 
-### Create nodegroup fro your cluster
+### Create nodegroup for your cluster
 
     eksctl create nodegroup --cluster=bankapp-cluster \
     --region=eu-west-1 \
@@ -81,7 +81,7 @@ IAM User with access keys and secret access keys
 
 #### NOTE :   
 
-'Make sure public key is available in your aws key pair account'
+Make sure public key is available in your aws key pair 
 
 
 
