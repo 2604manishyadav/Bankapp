@@ -78,7 +78,9 @@ IAM User with access keys and secret access keys
                      --ssh-access \
                      --ssh-public-key=bankapp-automate-key
 
+#### NOTE :   
 
+'Make sure public key is available in your aws account'
 
 
 
