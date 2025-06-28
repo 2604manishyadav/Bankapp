@@ -67,20 +67,22 @@ IAM User with access keys and secret access keys
 
 ### Create nodegroup fro your cluster
 
-    eksctl create nodegroup--cluster=bankapp-cluster 
-                     --region=eu-west-1 \ 
-                     --name=bankapp-ng \ 
-                     --node-type=t2.medium \
-                     --nodes=2 \
-                     --nodes-min=2 \
-                     --nodes-max=2 \
-                     --node-volume-size=20 \ 
-                     --ssh-access \
-                     --ssh-public-key=bankapp-automate-key
+    eksctl create nodegroup \
+  --cluster=bankapp-cluster \
+  --region=eu-west-1 \
+  --name=bankapp-ng \
+  --node-type=t2.medium \
+  --nodes=2 \
+  --nodes-min=2 \
+  --nodes-max=2 \
+  --node-volume-size=15 \
+  --ssh-access \
+  --ssh-public-key=bankapp-automate-key
+
 
 #### NOTE :   
 
-'Make sure public key is available in your aws account'
+'Make sure public key is available in your aws key pair account'
 
 
 
