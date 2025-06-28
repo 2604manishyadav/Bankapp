@@ -130,6 +130,21 @@ sudo vim /usr/lib/systemd/system/jenkins.service file
 
     curl --silent --location -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.4.7/argocd-linux-amd64
     chmod +x /usr/local/bin/argocd
+
+#### Change argocd service Port type from clusterip to nodeport
+
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
+
+#### Extarct the initial password for login to argocd , Username will be "admin"
+    kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+
+#### Login to argocd
+    argocd login <ARGOCD_SERVER_IP>:<PORT> --username=admin  
+
+#### Update password
+     argocd 
+
+
  
 
 
