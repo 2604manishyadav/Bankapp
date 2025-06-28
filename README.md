@@ -93,6 +93,16 @@ IAM User with access keys and secret access keys
 
 Make sure public key is available in your aws key pair 
 
+### Install Jenkins using shell script
+
+jenkin-install.sh 
+
+### Once jenkins install, change default port of Jenkins from 8080 to 8081 , 8080 port already assigned bankapp 
+
+Edit below file
+sudo vim /usr/lib/systemd/system/jenkins.service file
+
+
 
 
 
