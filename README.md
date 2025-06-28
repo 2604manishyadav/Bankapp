@@ -65,6 +65,18 @@ IAM User with access keys and secret access keys
 
     eksctl utils associate-iam-oidc-provider --cluster bankapp-cluster --approve
 
+### Create nodegroup fro your cluster
+
+    eksctl create nodegroup--cluster=bankapp-cluster 
+                     --region=eu-west-1 \ 
+                     --name=bankapp-ng \ 
+                     --node-type=t2.medium \
+                     --nodes=2 \
+                     --nodes-min=2 \
+                     --nodes-max=2 \
+                     --node-volume-size=20 \ 
+                     --ssh-access \
+                     --ssh-public-key=bankapp-automate-key
 
 
 
