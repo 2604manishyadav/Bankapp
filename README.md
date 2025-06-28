@@ -169,7 +169,7 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
     --dest-namespace bankapp-namespace \
     --sync-policy automated 
 
-#### Application Deployed in ArgoCD
+####  Sucessfully create application in ArgoCD
 
 ![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/c93d706b6c8702b1abc0c0ccc56c1cbbb7fe2466/ApplicationDeploy.PNG)    
 
