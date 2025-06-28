@@ -97,11 +97,40 @@ Make sure public key is available in your aws key pair
 
 jenkin-install.sh 
 
-### Once jenkins install, change default port of Jenkins from 8080 to 8081 , 8080 port already assigned bankapp 
+#### Once jenkins install, change default port of Jenkins from 8080 to 8081 , 8080 port already assigned bankapp 
 
 Edit below file
 sudo vim /usr/lib/systemd/system/jenkins.service file
 ![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/f3e37cf842890342e5a81e2528f1298ba0bbc7e4/Update-Jenkins-Port.PNG)
+
+#### Reload deamon and restart jenkins
+    sudo systemctl daemon-reload 
+    sudo systemctl restart jenkins
+
+### Install Docker
+
+    sudo apt-get install docker
+    sudo newgrp -aG docker Jenkins
+    newgrp docker
+
+### Run Jenkins Pipeline for pushing image to DockerHub
+
+### Install & Configure ArgoCD
+
+#### Create a namespace for ArgoCD
+    kubectl create ns argocd
+
+#### Apply ArgoCD manifest files    
+    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+#### Verify argocd Pods is running
+    kubctl get pods -n argocd
+
+#### Install argocd CLI
+
+    curl --silent --location -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.4.7/argocd-linux-amd64
+    chmod +x /usr/local/bin/argocd
+ 
 
 
 
