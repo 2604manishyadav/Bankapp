@@ -168,6 +168,35 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 #### Change port type of deployment service from ClusterIP to Nodeport
      kubectl patch svc bankapp-service -n bankapp-namespace -p '{"spec": {"type": "NodePort"}}'
 
+
+## Monitor EKS cluster, kubernetes components and workloads using prometheus and grafana via HELM (On Master machine)
+
+#### Install Helm chart
+     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+     chmod 700 get_helm.sh
+     ./get_helm.sh
+
+#### Add Helm Stable Charts for Your Local Client
+     helm repo add stable https://charts.helm.sh/stable
+
+#### Add prometheus to Helm repository
+     helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+#### Create Prometheus namespace
+     kubectl create namespace prometheus
+
+#### Install Prometheus using Helm
+     helm install stable prometheus-community/kube-prometheus-stack -n prometheus
+
+#### Change type port of stable grafana service from clusterip to nodeport
+     kubectl patch svc stable-grafana -n prometheus -p '{"spec": {"type": "NodePort"}}'
+
+#### To get initial password for login to Grafana , username will be 'admin'
+     kubectl get secret stable-grafana -n prometheus -o jsonpath="{.data.admin-password}" | base64 -d
+
+
+     
+     
      
      
 
