@@ -117,8 +117,8 @@ sudo vim /usr/lib/systemd/system/jenkins.service file
     sudo newgrp -aG docker Jenkins
     newgrp docker
 
-### Run Jenkins Pipeline for pushing image to DockerHub
-
+### Create CI Pipeline using Jenkins for pushing image to DockerHub, jenkins configuration file shared 
+### Add credential (Username and password) of DockerHub 
 ### Install & Configure ArgoCD
 
 #### Create a namespace for ArgoCD
