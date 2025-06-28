@@ -195,6 +195,16 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
      kubectl get secret stable-grafana -n prometheus -o jsonpath="{.data.admin-password}" | base64 -d
 
 
+### Grafana Dashboard
+
+![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/668a73247811eb569cc841220439c4e34037d119/Grafana-Dashboard.PNG)
+
+### Grafana Cluster view
+
+![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/668a73247811eb569cc841220439c4e34037d119/GrafanaCluster.PNG)
+
+
+
      
      
      
