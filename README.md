@@ -142,7 +142,20 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
     argocd login <ARGOCD_SERVER_IP>:<PORT> --username=admin  
 
 #### Update password
-     argocd 
+     argocd account update-password
+
+#### get list of cluster
+     argocd cluster list
+
+#### get your cluster name
+     kubectl config get-contexts
+
+#### Add your eks cluster in argocd
+     argocd cluster add Project-User@bankapp-cluster.eu-west-1.eksctl.io --name bankapp-cluster
+
+#### Add your github repository in argocd
+     
+     
 
 
  
