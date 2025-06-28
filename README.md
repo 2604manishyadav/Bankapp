@@ -65,6 +65,10 @@ IAM User with access keys and secret access keys
 
     eksctl utils associate-iam-oidc-provider --cluster bankapp-cluster --approve
 
+### Update the vpc-cni addon in your EKS
+
+    eksctl update addon --name vpc-cni --cluster bankapp-cluster --force
+
 ### Create nodegroup for your cluster
 
     eksctl create nodegroup --cluster=bankapp-cluster \
