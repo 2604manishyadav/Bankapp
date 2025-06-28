@@ -113,7 +113,7 @@ sudo vim /usr/lib/systemd/system/jenkins.service file
 
 ### Install Docker
 
-    sudo apt-get install docker
+    sudo apt-get install docker.io -y
     sudo newgrp -aG docker Jenkins
     newgrp docker
 
