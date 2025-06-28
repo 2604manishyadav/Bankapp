@@ -57,7 +57,9 @@ IAM User with access keys and secret access keys
     sudo mv /tmp/eksctl /usr/local/bin
     eksctl version
 
+### EKS cluster creation command without nodegroup
 
+    eksctl create cluster --name=bankapp-cluster --region=eu-west-1 --without-nodegroup --version=1.32
 
 
 
