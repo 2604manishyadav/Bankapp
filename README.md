@@ -154,6 +154,17 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
      argocd cluster add Project-User@bankapp-cluster.eu-west-1.eksctl.io --name bankapp-cluster
 
 #### Add your github repository in argocd
+     argocd repo add https://github.com/2604manishyadav/Bankapp.git
+
+#### Create application
+    argocd app create bankapp \
+    --repo https://github.com/2604manishyadav/Bankapp.git \
+    --path kubernetes \
+    --revision mega-project \
+    --dest-server https://C32D2EA5FF2136CA3E1F4838B1551148.sk1.eu-west-1.eks.amazonaws.com \
+    --dest-namespace bankapp-namespace \
+    --sync-policy automated  
+
      
      
 
