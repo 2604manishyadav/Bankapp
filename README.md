@@ -4,9 +4,13 @@
 
 ## This is a multi-tier bank an application written in Java (Springboot).
 
-#### Screenshots
+### Login page
 
-![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/86627cd7887c50fd3be7550a35dc65625a5bde15/springboot.PNG)
+![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/d9ad7e37fdf190da4cb08ef20296bb0a53391c5c/LoginPage.PNG)
+
+### Transaction Logs
+
+![App Screenshot](https://github.com/2604manishyadav/Bankapp/blob/d9ad7e37fdf190da4cb08ef20296bb0a53391c5c/Transaction-logs.PNG)
 
 ### Tech stack used in this project:
 
