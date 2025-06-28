@@ -209,7 +209,7 @@ sudo vim /usr/lib/systemd/system/jenkins.service file
      kubectl patch svc stable-grafana -n prometheus -p '{"spec": {"type": "NodePort"}}'
 
 #### To get initial password for login to Grafana , username will be 'admin'
-     kubectl get secret stable-grafana -n prometheus -o jsonpath="{.data.admin-password}" | base64 -d
+     kubectl get secret stable-grafana -n prometheus -o jsonpath="{.data.admin-password}" | base64 -d; echo
 
 
 ### Grafana Dashboard
