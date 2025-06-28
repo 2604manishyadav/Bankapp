@@ -61,6 +61,9 @@ IAM User with access keys and secret access keys
 
     eksctl create cluster --name=bankapp-cluster --region=eu-west-1 --without-nodegroup --version=1.32
 
+### Associate OIDC to EKS cluster
+
+    eksctl utils associate-iam-oidc-provider --cluster bankapp-cluster --approve
 
 
 
