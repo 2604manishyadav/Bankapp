@@ -163,7 +163,10 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
     --revision mega-project \
     --dest-server https://C32D2EA5FF2136CA3E1F4838B1551148.sk1.eu-west-1.eks.amazonaws.com \
     --dest-namespace bankapp-namespace \
-    --sync-policy automated  
+    --sync-policy automated 
+
+#### Change port type of deployment service from ClusterIP to Nodeport
+     kubectl patch svc bankapp-service -n bankapp-namespace -p '{"spec": {"type": "NodePort"}}'
 
      
      
